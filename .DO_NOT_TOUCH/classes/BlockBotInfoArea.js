@@ -6,12 +6,12 @@
 
 import Phaser from "phaser";
 
-export default class BattleSquareInfoArea {
-  constructor(scene, battleSquare, x, y) {
-    this.battleSquare = battleSquare;
+export default class BlockBotInfoArea {
+  constructor(scene, blockBot, x, y) {
+    this.blockBot = blockBot;
 
     this.nameText = scene.add
-      .text(x, y, battleSquare.name, {
+      .text(x, y, blockBot.name, {
         fontSize: "32px",
         fontFamily: '"Press Start 2P"',
         align: "center",
@@ -27,17 +27,17 @@ export default class BattleSquareInfoArea {
       .setScale(0.5) // Makes text more crisp
       .setDepth(100);
 
-    // Trigger a display update whenever important data is changed about battleSquare
-    battleSquare.events.on("datachange", this.updateDisplay, this);
+    // Trigger a display update whenever important data is changed about blockBot
+    blockBot.events.on("datachange", this.updateDisplay, this);
   }
 
   updateDisplay() {
-    this.nameText.setText(this.battleSquare.name);
+    this.nameText.setText(this.blockBot.name);
   }
 
   destroy() {
     // Remove this object's update listener from the scene
-    this.battleSquare.events.off("datachange", this.updateDisplay, this);
+    this.blockBot.events.off("datachange", this.updateDisplay, this);
 
     // Call this object's parent class destroy method
     super.destroy();

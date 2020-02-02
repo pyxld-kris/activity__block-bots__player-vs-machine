@@ -5,8 +5,8 @@
  */
 
 import Phaser from "phaser";
-import BattleSquare from "./BattleSquare";
-import BattleSquareInfoArea from "./BattleSquareInfoArea";
+import BlockBot from "./BlockBot";
+import BlockBotInfoArea from "./BlockBotInfoArea";
 import CenteredTimedText from "./CenteredTimedText";
 
 /* botStageFiles olds strings that determine the order bots will be loaded into the game based
@@ -88,7 +88,7 @@ export default class StageManager {
   }
 
   addBot(x, y) {
-    let thisBot = new BattleSquare(this.scene, x, y);
+    let thisBot = new BlockBot(this.scene, x, y);
     this.botEntities.push(thisBot);
 
     // Hook into thisBot's "point-scored" event to check when we should transition to new levels
@@ -130,9 +130,9 @@ export default class StageManager {
       }
     });
 
-    // Add BattleSquareInfoArea for this BattleSquare
+    // Add BlockBotInfoArea for this BlockBot
     let oneFourthWidth = this.scene.game.config.width / 2;
-    new BattleSquareInfoArea(
+    new BlockBotInfoArea(
       this.scene,
       thisBot,
       oneFourthWidth / 2 + oneFourthWidth * (this.botEntities.length - 1),

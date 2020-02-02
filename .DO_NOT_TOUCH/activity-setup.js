@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import DevLaunchers from "./classes/dev-launchers";
-import BattleSquare from "./classes/BattleSquare.js";
+import BlockBot from "./classes/BlockBot.js";
 import StageManager from "./classes/StageManager";
 
 // Load specific game stuff here that will be used in

@@ -33,8 +33,11 @@ myBot.makeMove = function() {
     * Scene Width: 800
     * Scene Height: 480
     */
-  if (myBot.distanceFrom(opponent) > 150) {
+  if (myBot.distanceFrom(opponent) > 200) {
     myBot.jumpToward(opponent, 7);
+  }
+  else if (myBot.distanceFrom(opponent) > 100) {
+    myBot.jumpAwayFrom(opponent, 5);
   }
   else {
     myBot.dashAwayFrom(opponent, 10);

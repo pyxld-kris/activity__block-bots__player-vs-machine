@@ -12,7 +12,7 @@ import PositionDisplay from "./PositionDisplay.js";
 var Color = Phaser.Display.Color;
 var EventEmitter = Phaser.Events.EventEmitter;
 
-export default class BattleSquare extends Phaser.Physics.Arcade.Sprite {
+export default class BlockBot extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y, config) {
     super(scene, x, y, scene.generateSquareSprite(100), 0);
     this.scene = scene;
@@ -104,7 +104,7 @@ export default class BattleSquare extends Phaser.Physics.Arcade.Sprite {
   /**
    * Gets the x component of this BattleSquare's position attribute
    *
-   * @method BattleSquare#getX
+   * @method BlockBot#getX
    * @since 0.0.1
    *
    * @return {float} The x component of this BattleSquare's position attribute
@@ -116,7 +116,7 @@ export default class BattleSquare extends Phaser.Physics.Arcade.Sprite {
   /**
    * Gets the x component of this BattleSquare's position attribute
    *
-   * @method BattleSquare#getX
+   * @method BlockBot#getX
    * @since 0.0.1
    *
    * @return {float} The x component of this BattleSquare's position attribute
@@ -128,7 +128,7 @@ export default class BattleSquare extends Phaser.Physics.Arcade.Sprite {
   /**
    * Returns the position of this BattleSquare with format {x:xPos, y:yPos}
    *
-   * @method BattleSquare#getPosition
+   * @method BlockBot#getPosition
    * @since 0.0.1
    *
    * @return {Object} The position of this BattleSquare with format {x:xPos, y:yPos}
@@ -143,7 +143,7 @@ export default class BattleSquare extends Phaser.Physics.Arcade.Sprite {
   /**
    * Gets the x component of this BattleSquare's velocity attribute
    *
-   * @method BattleSquare#getVelocityX
+   * @method BlockBot#getVelocityX
    * @since 0.0.1
    *
    * @return {float} The x component of this BattleSquare's velocity attribute
