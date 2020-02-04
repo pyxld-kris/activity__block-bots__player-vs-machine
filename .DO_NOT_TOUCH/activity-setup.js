@@ -3,6 +3,9 @@ import DevLaunchers from "./classes/dev-launchers";
 import BlockBot from "./classes/BlockBot.js";
 import StageManager from "./classes/StageManager";
 
+// Require esprima library, which we use to validate user code input
+var esprima = require("esprima");
+
 // Load specific game stuff here that will be used in
 // this file, or in 'modify.mjs'
 
@@ -64,16 +67,7 @@ var evalWithinContext = function(context, code) {
 // using this method instead of import to maintain scene scope and keep import/export
 //    out of the modify.js script. More simple for students to work with
 function loadModifyCode(scene) {
-  loadScriptWithinContext("../modify.mjs", scene);
-}
-function loadScriptWithinContext(path, context) {
-  /* eslint-disable */
-  let codeText = fetch(path)
-    .then(function(response) {
-      return response.text();
-    })
-    .then(function(textString) {
-      evalWithinContext(context, textString);
-    });
-  /* eslint-enable */
+  //loadScriptWithinContext("../modify.mjs", scene);
+  const modifiedCode = require("!!raw-loader!../modify.js");
+  evalWithinContext(scene, modifiedCode);
 }
